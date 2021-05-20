@@ -1,0 +1,12 @@
+.searchBar {
+  background-color: grey;
+}
+.activityForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.selectedCountries {
+  margin: black;
+}
