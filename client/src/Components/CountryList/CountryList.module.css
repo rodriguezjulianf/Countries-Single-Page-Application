@@ -1,6 +1,50 @@
 .countryList {
+}
+
+.countryMap {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+.title {
+  color: white;
+  font-size: 65px;
+  text-align: center;
+}
+.titleWrap {
+  background-color: grey;
+  margin: -10px 35% -10px 35%;
+  text-shadow: 4px 4px #000000;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.pageButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+
+.filterButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 20px 20px;
+  background-color: grey;
+}
+
+.pageButtonsAndMapWrapper {
+  margin: 1% 5% 5% 5%;
+  border-radius: 5px;
+  background-color: rgb(167, 167, 167);
 }

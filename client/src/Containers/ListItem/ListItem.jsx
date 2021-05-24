@@ -4,8 +4,10 @@ import s from './ListItem.module.css';
 function ListItem(props) {
   return (
     <div className={`${s.listItem}`}>
-      <span className={`${s.countryName}`}>{props.name}</span>
-      <span className={`${s.countryRegion}`}>{props.region}</span>
+      <span className={`${s.itemText}`}>
+        <span className={`${s.countryName}`}>{props.name}</span>
+        <span className={`${s.countryRegion}`}>{props.region}</span>
+      </span>
       <img
         className={`${s.countryFlag}`}
         src={props.flag}

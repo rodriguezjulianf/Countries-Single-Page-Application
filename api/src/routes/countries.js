@@ -5,7 +5,7 @@ const { Country } = require('../db.js');
 router.get('/', async (req, res, next) => {
   if (!req.query.name) {
     const check = await Country.findAll({
-      attributes: ['name', 'flag', 'region', 'alpha3code'],
+      attributes: ['name', 'flag', 'region', 'population', 'alpha3code'],
     });
     if (!check[0]) {
       fetch('https://restcountries.eu/rest/v2/all')
@@ -26,7 +26,7 @@ router.get('/', async (req, res, next) => {
         })
         .then(async () => {
           const data = await Country.findAll({
-            attributes: ['name', 'flag', 'region', 'alpha3code'],
+            attributes: ['name', 'flag', 'region', 'population', 'alpha3code'],
           });
           res.json(data);
         })

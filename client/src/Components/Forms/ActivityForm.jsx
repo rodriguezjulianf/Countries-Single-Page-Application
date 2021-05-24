@@ -18,19 +18,11 @@ function ActivityForm() {
   });
   const dispatch = useDispatch();
 
-  const addSelectedCountry = (e) => {
-    const newDiv = document.createElement('div');
-    newDiv.className = `${s.selectedCountry}`;
-    newDiv.innerHTML = `${e.target.value} `;
-    newDiv.id = `${e.target.value}`;
-    newDiv.addEventListener('click', () => {
-      newDiv.remove();
-      input.country.splice(
-        input.country.indexOf((c) => c === e.target.value),
-        1
-      );
+  const handleDelete = (country) => {
+    setInput({
+      ...input,
+      country: [...input.country].filter((c) => c !== country),
     });
-    document.getElementById('selectedCountries').appendChild(newDiv);
   };
 
   const handleInputChange = (e) => {
@@ -41,8 +33,12 @@ function ActivityForm() {
       });
     } else {
       if (input.country.indexOf(e.target.value) === -1) {
-        input.country.push(e.target.value);
-        addSelectedCountry(e);
+        const countries = input.country;
+        countries.push(e.target.value);
+        setInput({
+          ...input,
+          country: countries,
+        });
       }
     }
   };
@@ -54,15 +50,30 @@ function ActivityForm() {
   };
 
   return (
-    //podria poner boton para despachar y preventDefault asi no se trigerea solo
     <form className={`${s.activityForm}`} onSubmit={handleSubmit}>
-      <NameButton handleInputChange={handleInputChange} />
-      <DifficultyButton handleInputChange={handleInputChange} />
-      <DurationButton handleInputChange={handleInputChange} />
-      <SeasonButton handleInputChange={handleInputChange} />
-      <CountrySelectorButton handleInputChange={handleInputChange} />
-      <div id="selectedCountries" className={`${s.selectedCountries}`}></div>
-      <input type="submit" value="Submit" />
+      <span className={`${s.inputs}`}>
+        <NameButton handleInputChange={handleInputChange} />
+        <DifficultyButton handleInputChange={handleInputChange} />
+        <DurationButton handleInputChange={handleInputChange} />
+        <SeasonButton handleInputChange={handleInputChange} />
+        <CountrySelectorButton handleInputChange={handleInputChange} />
+        <div id="selectedCountries" className={`${s.selectedCountries}`}>
+          {input.country.length >= 1 ? (
+            input.country.map((country) => (
+              <div
+                onClick={() => {
+                  handleDelete(country);
+                }}
+              >
+                {country}
+              </div>
+            ))
+          ) : (
+            <div>No country selected</div>
+          )}
+        </div>
+      </span>
+      <input className={`${s.submit}`} type="submit" value="Submit" />
     </form>
   );
 }

@@ -14,7 +14,7 @@ function ResetFilterButton({ setActivePage }) {
         window.scrollTo(0, 0);
       }}
     >
-      Remove Filter
+      Remove filters
     </button>
   );
 }

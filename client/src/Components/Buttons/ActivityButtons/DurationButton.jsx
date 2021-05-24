@@ -2,7 +2,7 @@ import React from 'react';
 
 function DurationButton({ handleInputChange }) {
   return (
-    <React.Fragment>
+    <div>
       <label for="duration">Duration in hours: </label>
       <input
         type="number"
@@ -12,7 +12,7 @@ function DurationButton({ handleInputChange }) {
         max="1000"
         onChange={(e) => handleInputChange(e)}
       />
-    </React.Fragment>
+    </div>
   );
 }
 

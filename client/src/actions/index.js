@@ -35,14 +35,39 @@ export function filterByRegion(region) {
   };
 }
 
+export function filterByActivity(activity) {
+  return {
+    type: 'filterByActivity',
+    payload: activity,
+  };
+}
+
 export function filterReset() {
   return {
     type: 'filterReset',
   };
 }
 
+export function orderAlphabetically() {
+  return {
+    type: 'orderAlphabetically',
+  };
+}
+
+export function orderByPopulation() {
+  return {
+    type: 'orderByPopulation',
+  };
+}
+
+export function loadActivities(activities) {
+  return {
+    type: 'loadActivities',
+    payload: activities,
+  };
+}
+
 export function createActivity(activity) {
-  console.log('entra el action');
   return function () {
     axios({
       method: 'post',
@@ -92,6 +117,20 @@ export function fetchCountryByCode(alpha3code) {
       })
       .then((data) => {
         dispatch(loadCountryPage(data));
+      })
+      .catch((event) => console.log(event));
+  };
+}
+
+export function fetchActivities() {
+  return function (dispatch) {
+    axios
+      .get(`http://localhost:3001/activity/`)
+      .then((result) => {
+        return result.data;
+      })
+      .then((data) => {
+        dispatch(loadActivities(data));
       })
       .catch((event) => console.log(event));
   };

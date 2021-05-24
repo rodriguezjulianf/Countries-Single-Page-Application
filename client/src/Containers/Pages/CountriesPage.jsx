@@ -5,11 +5,9 @@ import s from './Pages.module.css';
 
 export default function CountriesPage() {
   return (
-    <React.Fragment>
-      <div className={`${s.upperZone}`}>
-        <NavBar />
-      </div>
+    <div className={s.countriesPage}>
+      <NavBar />
       <CountryList />
-    </React.Fragment>
+    </div>
   );
 }

@@ -7,10 +7,10 @@ function FilterButton({ setActivePage }) {
   const dispatch = useDispatch();
   return (
     <div className={`${s.dropdown}`}>
-      <button className={`${s.dropbtn}`}>Filter by</button>
+      <button className={`${s.dropbtn}`}>Filter by region</button>
       <div className={`${s.dropdownContent}`}>
         <a
-          href="#"
+          href="javascript:void(0)"
           onClick={() => {
             dispatch(filterByRegion('Africa'));
             setActivePage(0);
@@ -19,7 +19,7 @@ function FilterButton({ setActivePage }) {
           Africa
         </a>
         <a
-          href="#"
+          href="javascript:void(0)"
           onClick={() => {
             dispatch(filterByRegion('Americas'));
             setActivePage(0);
@@ -28,7 +28,7 @@ function FilterButton({ setActivePage }) {
           Americas
         </a>
         <a
-          href="#"
+          href="javascript:void(0)"
           onClick={() => {
             dispatch(filterByRegion('Asia'));
             setActivePage(0);
@@ -37,7 +37,7 @@ function FilterButton({ setActivePage }) {
           Asia
         </a>
         <a
-          href="#"
+          href="javascript:void(0)"
           onClick={() => {
             dispatch(filterByRegion('Europe'));
             setActivePage(0);
@@ -46,7 +46,7 @@ function FilterButton({ setActivePage }) {
           Europe
         </a>
         <a
-          href="#"
+          href="javascript:void(0)"
           onClick={() => {
             dispatch(filterByRegion('Oceania'));
             setActivePage(0);
@@ -55,7 +55,7 @@ function FilterButton({ setActivePage }) {
           Oceania
         </a>
         <a
-          href="#"
+          href="javascript:void(0)"
           onClick={() => {
             dispatch(filterByRegion('Polar'));
             setActivePage(0);

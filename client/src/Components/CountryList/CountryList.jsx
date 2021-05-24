@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCountries, changePage } from '../../actions';
+import { fetchCountries, fetchActivities, changePage } from '../../actions';
 import ListItem from '../../Containers/ListItem/ListItem.jsx';
 import NextButton from '../Buttons/NextButton.jsx';
 import PrevButton from '../Buttons/PrevButton.jsx';
 import FilterButton from '../Buttons/FilterButton.jsx';
+import FilterActivityButton from '../Buttons/FilterActivityButton.jsx';
 import ResetFilterButton from '../Buttons/ResetFilterButton.jsx';
+import AlphabetaButton from '../Buttons/AlphabetaButton.jsx';
+import PopulationButton from '../Buttons/PopulationButton.jsx';
 import s from './CountryList.module.css';
 
 export default function CountryList() {
@@ -17,7 +20,8 @@ export default function CountryList() {
 
   useEffect(() => {
     dispatch(fetchCountries());
-  }, []);
+    dispatch(fetchActivities());
+  }, [dispatch]);
 
   useEffect(() => {
     if (check[0]) {
@@ -26,37 +30,56 @@ export default function CountryList() {
   }, [activePage, check, dispatch]);
 
   return (
-    <div>
-      <h1>CountryList</h1>
-      <PrevButton setActivePage={setActivePage} />
-      <NextButton setActivePage={setActivePage} />
-      <FilterButton setActivePage={setActivePage} />
-      <ResetFilterButton setActivePage={setActivePage} />
-      <div className={`${s.countryList}`}>
-        {Array.isArray(countries) ? (
-          countries.map((country) => (
-            <NavLink exact to={`/countries/${country.alpha3code}`}>
+    <div className={`${s.countryList}`}>
+      <div className={`${s.titleWrap}`}>
+        <h1 className={`${s.title}`}>Henry Countries</h1>
+      </div>
+      <div className={`${s.buttons}`}>
+        <span className={`${s.filterButtons}`}>
+          <FilterButton setActivePage={setActivePage} />
+          <FilterActivityButton setActivePage={setActivePage} />
+          <ResetFilterButton setActivePage={setActivePage} />
+          <AlphabetaButton setActivePage={setActivePage} />
+          <PopulationButton setActivePage={setActivePage} />
+        </span>
+      </div>
+      <section className={`${s.pageButtonsAndMapWrapper}`}>
+        <span className={`${s.pageButtons}`}>
+          <PrevButton setActivePage={setActivePage} />
+          <NextButton setActivePage={setActivePage} />
+        </span>
+        <div className={`${s.countryMap}`}>
+          {Array.isArray(countries) ? (
+            countries.map((country) => (
+              <NavLink
+                exact
+                to={`/countries/${country.alpha3code}`}
+                style={{ textDecoration: 'none' }}
+              >
+                <ListItem
+                  key={country.id}
+                  name={country.name}
+                  flag={country.flag}
+                  region={country.region}
+                />
+              </NavLink>
+            ))
+          ) : (
+            <NavLink exact to={`/countries/${countries.alpha3code}`}>
               <ListItem
-                key={country.id}
-                name={country.name}
-                flag={country.flag}
-                region={country.region}
+                key={countries.id}
+                name={countries.name}
+                flag={countries.flag}
+                region={countries.region}
               />
             </NavLink>
-          ))
-        ) : (
-          <NavLink exact to={`/countries/${countries.alpha3code}`}>
-            <ListItem
-              key={countries.id}
-              name={countries.name}
-              flag={countries.flag}
-              region={countries.region}
-            />
-          </NavLink>
-        )}
-      </div>
-      <PrevButton setActivePage={setActivePage} />
-      <NextButton setActivePage={setActivePage} />
+          )}
+        </div>
+        <span className={`${s.pageButtons}`}>
+          <PrevButton setActivePage={setActivePage} />
+          <NextButton setActivePage={setActivePage} />
+        </span>
+      </section>
     </div>
   );
 }

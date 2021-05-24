@@ -1,3 +1,33 @@
-.upperZone {
+.countriesPage {
+  background-color: white;
+}
+
+.activityPage {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  background-color: rgb(173, 173, 173);
+  height: 938px;
+  width: 1920px;
+  padding-top: 50px;
+}
+
+.landingTitleAndButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 110px;
+}
+
+.landingTitle {
+  color: white;
+  font-size: 100px;
+}
+
+.landingPage {
+  margin-top: -25px;
+  height: 1080px;
+  width: 1900px;
+  background-image: url(https://adamolsen.ca/wp-content/uploads/2020/04/sunrise_1920.jpg);
 }
