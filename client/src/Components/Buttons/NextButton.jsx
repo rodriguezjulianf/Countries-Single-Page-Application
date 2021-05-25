@@ -14,7 +14,11 @@ function NextButton({ setActivePage }) {
           }
           return prev < 24 ? prev + 1 : prev;
         });
-        window.scrollTo(0, 0);
+        window.scrollTo({
+          top: 100,
+          left: 100,
+          behavior: 'smooth',
+        });
       }}
     >
       Next

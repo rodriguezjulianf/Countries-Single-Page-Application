@@ -45,8 +45,8 @@ function ActivityForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submitted:', input);
     dispatch(createActivity(input));
+    window.alert('Activity created successfully');
   };
 
   return (

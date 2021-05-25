@@ -11,7 +11,6 @@ function ResetFilterButton({ setActivePage }) {
       onClick={() => {
         dispatch(filterReset());
         setActivePage(0);
-        window.scrollTo(0, 0);
       }}
     >
       Remove filters

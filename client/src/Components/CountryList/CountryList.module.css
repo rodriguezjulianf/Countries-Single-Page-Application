@@ -9,14 +9,13 @@
 }
 
 .title {
-  color: white;
+  color: #04aa6d;
+  text-shadow: 2px 2px #000000;
   font-size: 65px;
   text-align: center;
 }
 .titleWrap {
-  background-color: grey;
   margin: -10px 35% -10px 35%;
-  text-shadow: 4px 4px #000000;
 }
 
 .buttons {
