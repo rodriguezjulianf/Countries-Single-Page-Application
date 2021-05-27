@@ -44,9 +44,9 @@ export default function CountryList() {
         </span>
       </div>
       <section className={`${s.pageButtonsAndMapWrapper}`}>
+        <PrevButton setActivePage={setActivePage} />
         {countries.length === 10 ? (
           <span className={`${s.pageButtons}`}>
-            <PrevButton setActivePage={setActivePage} />
             <NextButton setActivePage={setActivePage} />
           </span>
         ) : null}
@@ -77,9 +77,9 @@ export default function CountryList() {
             </NavLink>
           )}
         </div>
+        <PrevButton setActivePage={setActivePage} />
         {countries.length === 10 ? (
           <span className={`${s.pageButtons}`}>
-            <PrevButton setActivePage={setActivePage} />
             <NextButton setActivePage={setActivePage} />
           </span>
         ) : null}
