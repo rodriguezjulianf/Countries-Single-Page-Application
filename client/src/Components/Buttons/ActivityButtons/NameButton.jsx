@@ -6,6 +6,7 @@ function NameButton({ handleInputChange }) {
     <div>
       <label for="name">Name: </label>
       <input
+        required
         className={`${s.form}`}
         id="name"
         type="text"

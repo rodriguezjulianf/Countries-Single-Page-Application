@@ -44,10 +44,12 @@ export default function CountryList() {
         </span>
       </div>
       <section className={`${s.pageButtonsAndMapWrapper}`}>
-        <span className={`${s.pageButtons}`}>
-          <PrevButton setActivePage={setActivePage} />
-          <NextButton setActivePage={setActivePage} />
-        </span>
+        {countries.length === 10 ? (
+          <span className={`${s.pageButtons}`}>
+            <PrevButton setActivePage={setActivePage} />
+            <NextButton setActivePage={setActivePage} />
+          </span>
+        ) : null}
         <div className={`${s.countryMap}`}>
           {Array.isArray(countries) ? (
             countries.map((country) => (
@@ -75,10 +77,12 @@ export default function CountryList() {
             </NavLink>
           )}
         </div>
-        <span className={`${s.pageButtons}`}>
-          <PrevButton setActivePage={setActivePage} />
-          <NextButton setActivePage={setActivePage} />
-        </span>
+        {countries.length === 10 ? (
+          <span className={`${s.pageButtons}`}>
+            <PrevButton setActivePage={setActivePage} />
+            <NextButton setActivePage={setActivePage} />
+          </span>
+        ) : null}
       </section>
     </div>
   );

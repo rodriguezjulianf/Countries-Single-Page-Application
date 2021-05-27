@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 function NextButton({ setActivePage }) {
   const limitCheck = useSelector((state) => state.filteredCountries);
+
   return (
     <button
       className={styles.buttons}

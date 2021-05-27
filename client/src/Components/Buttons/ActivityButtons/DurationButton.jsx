@@ -5,6 +5,7 @@ function DurationButton({ handleInputChange }) {
     <div>
       <label for="duration">Duration in hours: </label>
       <input
+        required
         type="number"
         id="duration"
         name="duration"
