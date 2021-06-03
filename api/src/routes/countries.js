@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 const { Country } = require('../db.js');
+const { Op } = require('sequelize');
 
 router.get('/', async (req, res, next) => {
   if (!req.query.name) {
@@ -40,12 +41,34 @@ router.get('/', async (req, res, next) => {
 });
 
 router.get('/', async (req, res) => {
+  const input = req.query.name;
   try {
-    const data = await Country.findOne({
+    const data = await Country.findAll({
       where: {
-        name: req.query.name,
+        [Op.or]: [
+          {
+            name: input,
+          },
+          {
+            name: {
+              [Op.iLike]: `%${input}`,
+            },
+          },
+          {
+            name: {
+              [Op.iLike]: `%${input}%`,
+            },
+          },
+          {
+            name: {
+              [Op.iLike]: `${input}%`,
+            },
+          },
+        ],
       },
+      attributes: ['name', 'flag', 'region', 'population', 'alpha3code'],
     });
+    console.log(data);
     res.json(data);
   } catch (e) {
     throw new Error(e);

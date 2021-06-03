@@ -44,45 +44,36 @@ export default function CountryList() {
         </span>
       </div>
       <section className={`${s.pageButtonsAndMapWrapper}`}>
-        <PrevButton setActivePage={setActivePage} />
-        {countries.length === 10 ? (
-          <span className={`${s.pageButtons}`}>
+        <span className={`${s.pageButtons}`}>
+          <PrevButton setActivePage={setActivePage} />
+          {countries?.length === 10 ? (
             <NextButton setActivePage={setActivePage} />
-          </span>
-        ) : null}
+          ) : null}
+        </span>
         <div className={`${s.countryMap}`}>
-          {Array.isArray(countries) ? (
-            countries.map((country) => (
-              <NavLink
-                exact
-                to={`/countries/${country.alpha3code}`}
-                style={{ textDecoration: 'none' }}
-              >
-                <ListItem
-                  key={country.id}
-                  name={country.name}
-                  flag={country.flag}
-                  region={country.region}
-                />
-              </NavLink>
-            ))
-          ) : (
-            <NavLink exact to={`/countries/${countries.alpha3code}`}>
-              <ListItem
-                key={countries.id}
-                name={countries.name}
-                flag={countries.flag}
-                region={countries.region}
-              />
-            </NavLink>
-          )}
+          {Array.isArray(countries)
+            ? countries.map((country) => (
+                <NavLink
+                  exact
+                  to={`/countries/${country.alpha3code}`}
+                  style={{ textDecoration: 'none' }}
+                >
+                  <ListItem
+                    key={country.id || countries.id}
+                    name={country.name || countries.name}
+                    flag={country.flag || countries.flag}
+                    region={country.region || countries.region}
+                  />
+                </NavLink>
+              ))
+            : null}
         </div>
-        <PrevButton setActivePage={setActivePage} />
-        {countries.length === 10 ? (
-          <span className={`${s.pageButtons}`}>
+        <span className={`${s.pageButtons}`}>
+          <PrevButton setActivePage={setActivePage} />
+          {countries?.length === 10 ? (
             <NextButton setActivePage={setActivePage} />
-          </span>
-        ) : null}
+          ) : null}
+        </span>
       </section>
     </div>
   );

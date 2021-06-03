@@ -45,27 +45,15 @@ function CountryPage(props) {
                 ) {
                   return (
                     <ActivityItem
-                      name={a.name}
-                      difficulty={a.difficulty}
-                      duration={a.duration}
-                      season={a.season}
+                      name={a.name || activities.name}
+                      difficulty={a.difficulty || activities.difficulty}
+                      duration={a.duration || activities.duration}
+                      season={a.season || activities.season}
                     />
                   );
                 }
               })
-            : (function invoke() {
-                if (
-                  activities.countries.filter((c) => c.name === country.name)
-                    .length > 0
-                ) {
-                  <ActivityItem
-                    name={activities.name}
-                    difficulty={activities.difficulty}
-                    duration={activities.duration}
-                    season={activities.season}
-                  />;
-                }
-              })()}
+            : null}
         </div>
         <div className={s.mainButton}>
           <MainButton />
