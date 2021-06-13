@@ -9,7 +9,7 @@ function FilterActivityButton({ setActivePage }) {
 
   return (
     <div className={`${s.dropdown}`}>
-      <button className={`${s.dropbtn}`}>Filter by activities</button>
+      <button className={`${s.buttons}`}>Filter by activities</button>
       <div className={`${s.dropdownContent}`}>
         {Array.isArray(activities) ? (
           activities.map((activity) => (

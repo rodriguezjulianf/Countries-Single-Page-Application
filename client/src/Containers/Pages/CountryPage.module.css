@@ -6,7 +6,6 @@
 }
 
 .countryName {
-  padding-top: 30px;
   text-align: center;
   font-size: 55px;
   color: white;
@@ -32,6 +31,7 @@
   margin-top: 50px;
   max-width: 600px;
   max-height: 620px;
+  margin-bottom: 50px;
 }
 .countryActivitiesChart {
   display: inline-flex;
@@ -40,7 +40,6 @@
   flex-direction: row;
   align-items: space-between;
   justify-content: space-between;
-  margin-top: 30px;
   margin-bottom: 5px;
   font-size: 21px;
 }
@@ -51,13 +50,12 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 10px;
-  margin-left: 13%;
-  margin-right: 13%;
+  margin-bottom: 50px;
   font-size: 29px;
   border: 3px solid rgb(0, 0, 0);
 }
 
 .mainButton {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-left: 50px;
 }

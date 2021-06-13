@@ -7,7 +7,7 @@ function FilterButton({ setActivePage }) {
   const dispatch = useDispatch();
   return (
     <div className={`${s.dropdown}`}>
-      <button className={`${s.dropbtn}`}>Filter by region</button>
+      <button className={`${s.buttons}`}>Filter by region</button>
       <div className={`${s.dropdownContent}`}>
         <a
           href="javascript:void(0)"

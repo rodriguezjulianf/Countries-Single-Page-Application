@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createActivity } from '../../actions';
 import s from './Forms.module.css';
+import buttonStyle from '../Buttons/Buttons.module.css';
 import NameButton from '../Buttons/ActivityButtons/NameButton.jsx';
 import DifficultyButton from '../Buttons/ActivityButtons/DifficultyButton.jsx';
 import DurationButton from '../Buttons/ActivityButtons/DurationButton.jsx';
@@ -73,7 +74,7 @@ function ActivityForm() {
           )}
         </div>
       </span>
-      <input className={`${s.submit}`} type="submit" value="Submit" />
+      <input className={`${buttonStyle.buttons} ${s.submit} `} type="submit" value="Submit" />
     </form>
   );
 }

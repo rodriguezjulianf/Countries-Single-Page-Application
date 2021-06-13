@@ -17,6 +17,9 @@ function CountryPage(props) {
 
   return (
     <div className={`${s.countryPage}`}>
+    <div className={s.mainButton}>
+      <MainButton />
+    </div>
       <h1 className={`${s.countryName}`}>{country.name}</h1>
       <div className={`${s.countryData}`}>
         <div className={`${s.countryTextData}`}>
@@ -31,33 +34,31 @@ function CountryPage(props) {
           alt={country.flag}
           className={`${s.countryFlag}`}
         />
-        <div className={`${s.countryActivitiesChart}`}>
-          <span>Activity:</span>
-          <span>Difficulty:</span>
-          <span>Duration:</span>
-          <span>Season:</span>
-        </div>
-        <div className={`${s.countryActivities}`}>
-          {Array.isArray(activities)
-            ? activities.map((a) => {
-                if (
-                  a.countries.filter((c) => c.name === country.name).length > 0
-                ) {
-                  return (
-                    <ActivityItem
+        {Array.isArray(activities) && activities?.some((a)=> a.countries.some((c) => c.name === country.name)) ? (
+        <section>
+          <div className={`${s.countryActivitiesChart}`}> 
+            <span>Activity:</span>
+            <span>Difficulty:</span>
+            <span>Duration:</span>
+            <span>Season:</span>
+          </div>
+          <div className={`${s.countryActivities}`}>
+            {activities.map((a) => {
+                return (
+                      <ActivityItem
                       name={a.name || activities.name}
                       difficulty={a.difficulty || activities.difficulty}
                       duration={a.duration || activities.duration}
                       season={a.season || activities.season}
-                    />
-                  );
-                }
-              })
-            : null}
-        </div>
-        <div className={s.mainButton}>
-          <MainButton />
-        </div>
+                      />
+                      )
+                  })
+            }
+          </div>
+        </section> )
+        :
+        null
+      }
       </div>
     </div>
   );
