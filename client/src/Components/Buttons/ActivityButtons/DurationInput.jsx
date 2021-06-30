@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DurationButton({ handleInputChange }) {
+function DurationInput({ handleInputChange }) {
   return (
     <div>
       <label for="duration">Duration in hours: </label>
@@ -17,4 +17,4 @@ function DurationButton({ handleInputChange }) {
   );
 }
 
-export default DurationButton;
+export default DurationInput;

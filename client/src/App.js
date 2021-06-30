@@ -1,8 +1,5 @@
 import './App.css';
-import LandingPage from './Containers/Pages/LandingPage.jsx';
-import CountriesPage from './Containers/Pages/CountriesPage.jsx';
-import CountryPage from './Containers/Pages/CountryPage.jsx';
-import ActivityPage from './Containers/Pages/ActivityPage.jsx';
+import { LandingPage, CountriesPage, CountryPage, ActivityPage } from './Containers/Pages/';
 import { Route } from 'react-router-dom';
 
 function App() {

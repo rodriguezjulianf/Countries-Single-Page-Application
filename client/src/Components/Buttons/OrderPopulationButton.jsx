@@ -3,7 +3,7 @@ import s from './Buttons.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { orderByPopulation } from '../../actions';
 
-function PopulationButton({ setActivePage }) {
+function OrderPopulationButton({ setActivePage }) {
   const [text, setText] = useState('Highest population');
   const dispatch = useDispatch();
   const check = useSelector((state) => state.filteredCountries);
@@ -29,4 +29,4 @@ function PopulationButton({ setActivePage }) {
   );
 }
 
-export default PopulationButton;
+export default OrderPopulationButton;

@@ -3,7 +3,7 @@ import s from './Buttons.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { orderAlphabetically } from '../../actions';
 
-function AlphabetaButton({ setActivePage }) {
+function OrderAlphabetaButton({ setActivePage }) {
   const [text, setText] = useState('Descendant (Z>A)');
   const dispatch = useDispatch();
   const check = useSelector((state) => state.filteredCountries);
@@ -29,4 +29,4 @@ function AlphabetaButton({ setActivePage }) {
   );
 }
 
-export default AlphabetaButton;
+export default OrderAlphabetaButton;

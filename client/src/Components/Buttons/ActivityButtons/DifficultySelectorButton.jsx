@@ -1,7 +1,7 @@
 import React from 'react';
 import s from '../Buttons.module.css';
 
-function DifficultyButton({ handleInputChange }) {
+function DifficultyInputSelect({ handleInputChange }) {
   return (
     <div className={`${s.dropdown}`}>
       <label for="difficulty">Difficulty: </label>
@@ -25,4 +25,4 @@ function DifficultyButton({ handleInputChange }) {
   );
 }
 
-export default DifficultyButton;
+export default DifficultyInputSelect;

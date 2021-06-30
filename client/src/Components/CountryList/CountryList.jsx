@@ -3,13 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries, fetchActivities, changePage } from '../../actions';
 import ListItem from '../../Containers/ListItem/ListItem.jsx';
-import NextButton from '../Buttons/NextButton.jsx';
-import PrevButton from '../Buttons/PrevButton.jsx';
-import FilterButton from '../Buttons/FilterButton.jsx';
-import FilterActivityButton from '../Buttons/FilterActivityButton.jsx';
-import ResetFilterButton from '../Buttons/ResetFilterButton.jsx';
-import AlphabetaButton from '../Buttons/AlphabetaButton.jsx';
-import PopulationButton from '../Buttons/PopulationButton.jsx';
+import { NextButton, PrevButton, FilterButton, FilterActivityButton, ResetFilterButton, OrderAlphabetaButton, OrderPopulationButton } from '../Buttons/';
 import s from './CountryList.module.css';
 
 export default function CountryList() {
@@ -39,8 +33,8 @@ export default function CountryList() {
           <FilterButton setActivePage={setActivePage} />
           <FilterActivityButton setActivePage={setActivePage} />
           <ResetFilterButton setActivePage={setActivePage} />
-          <AlphabetaButton setActivePage={setActivePage} />
-          <PopulationButton setActivePage={setActivePage} />
+          <OrderAlphabetaButton setActivePage={setActivePage} />
+          <OrderPopulationButton setActivePage={setActivePage} />
         </span>
       </div>
       <section className={`${s.pageButtonsAndMapWrapper}`}>

@@ -3,11 +3,7 @@ import { useDispatch } from 'react-redux';
 import { createActivity } from '../../actions';
 import s from './Forms.module.css';
 import buttonStyle from '../Buttons/Buttons.module.css';
-import NameButton from '../Buttons/ActivityButtons/NameButton.jsx';
-import DifficultyButton from '../Buttons/ActivityButtons/DifficultyButton.jsx';
-import DurationButton from '../Buttons/ActivityButtons/DurationButton.jsx';
-import SeasonButton from '../Buttons/ActivityButtons/SeasonButton.jsx';
-import CountrySelectorButton from '../Buttons/ActivityButtons/CountrySelectorButton.jsx';
+import { NameInput, DifficultySelectorButton, DurationInput, SeasonSelectorButton, CountrySelectorButton } from '../Buttons/ActivityButtons/';
 
 function ActivityForm() {
   const [input, setInput] = useState({
@@ -53,10 +49,10 @@ function ActivityForm() {
   return (
     <form className={`${s.activityForm}`} onSubmit={handleSubmit}>
       <span className={`${s.inputs}`}>
-        <NameButton handleInputChange={handleInputChange} />
-        <DifficultyButton handleInputChange={handleInputChange} />
-        <DurationButton handleInputChange={handleInputChange} />
-        <SeasonButton handleInputChange={handleInputChange} />
+        <NameInput handleInputChange={handleInputChange} />
+        <DifficultySelectorButton handleInputChange={handleInputChange} />
+        <DurationInput handleInputChange={handleInputChange} />
+        <SeasonSelectorButton handleInputChange={handleInputChange} />
         <CountrySelectorButton handleInputChange={handleInputChange} />
         <div id="selectedCountries" className={`${s.selectedCountries}`}>
           {input.country.length >= 1 ? (

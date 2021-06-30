@@ -1,7 +1,7 @@
 import React from 'react';
 import s from '../Buttons.module.css';
 
-function NameButton({ handleInputChange }) {
+function NameInput({ handleInputChange }) {
   return (
     <div>
       <label for="name">Name: </label>
@@ -17,4 +17,4 @@ function NameButton({ handleInputChange }) {
   );
 }
 
-export default NameButton;
+export default NameInput;
