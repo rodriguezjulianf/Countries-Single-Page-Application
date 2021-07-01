@@ -8,53 +8,52 @@
   <img height="200" src="./countries.png" />
 </p>
 
-## Enunciado
+## __Descripción:__
 
-La idea general es crear una aplicación en la cual se pueda ver información de  distintos paises utilizando la api externa [restcountries](https://restcountries.eu/) y a partir de ella poder, entre otras cosas:
+Aplicación en la cual se puede ver información de distintos países utilizando la api [restcountries](https://restcountries.eu/) y a partir de ella poder:
 
-  - Buscar paises
-  - Filtrarlos / Ordenarlos
-  - Crear actividades turísticas
+- Buscar y ver países
+- Crear actividades turísticas
+- Filtrarlos por continente y actividades asociadas
+- Ordenarlos alfabéticamente y por población
 
+### __Endpoint que se utilizó:__
 
+- GET https://restcountries.eu/rest/v2/all
 
-### Único endpoints que utilic
+#### __Tecnologías utilizadas:__
 
-  - GET https://restcountries.eu/rest/v2/all
-
-### Requerimientos mínimos:
-(CSS puro, CSS Modules o Styled Components)
-
-#### Tecnologías necesarias:
 - React
 - Redux
 - Express
-- Sequelize - Postgres
+- Sequelize - PostgreSQL
 
-#### Frontend
+### __Frontend:__
 
-Se debe desarrollar una aplicación de React/Redux que contenga las siguientes pantallas/rutas.
+Se desarrolló una aplicación con React/Redux que contiene las siguientes pantallas/rutas.
 
-__Pagina inicial__
+- __Pagina inicial__: landing con un botón para ir al home  el título de la app.
+- __Ruta principal__: display de países, botones para filtro, paginación y navegación, barra de búsqueda.
+- __Ruta de detalle de país__: muestra información más específica del país y las actividades asociadas a él.
+- __Ruta de creación de actividad turística__: formulario para agregar actividades a países.
 
-__Ruta principal__
+### __Base de datos:__
 
-__Ruta de detalle de país__
+Se utilizó PostgreSQL con Sequelize y se modelaron las entidades en una hoja de papel.
 
-__Ruta de creación de actividad turística__
-#### Base de datos
+### __Backend server:__
 
-#### Backend
+Se desarrolló un servidor en Node/Express con las siguientes rutas:
 
-Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
+- __GET /countries__: para el display de todos los países.
+- __GET /countries/{idPais}__: para la página de detalle de cada país.
+- __GET /countries?name="..."__: para la barra de búsqueda.
+- __POST /activity__: para guardar la actividad del formulario.
 
+### __Formato de estilos:__
 
-- [ ] __GET /countries__
-- [ ] __GET /countries/{idPais}__
-- [ ] __GET /countries?name="..."__
-- [ ] __POST /activity__:
+CSS Modules
 
-#### Testing
-- [ ] Al menos tener un componente del frontend con sus tests respectivos
-- [ ] Al menos tener una ruta del backend con sus tests respectivos
-- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
+### __Testing:__
+
+- Se testeó una ruta del backend y un modelo de la base de datos.
