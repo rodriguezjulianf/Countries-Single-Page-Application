@@ -8,20 +8,20 @@
   <img height="200" src="./countries.png" />
 </p>
 
-## __Descripción:__
+## __Description:__
 
-Aplicación en la cual se puede ver información de distintos países utilizando la api [restcountries](https://restcountries.eu/) y a partir de ella poder:
+Single Page Application where you can see information for every country, using the API [restcountries](https://restcountries.eu/) it can do:
 
-- Buscar y ver países
-- Crear actividades turísticas
-- Filtrarlos por continente y actividades asociadas
-- Ordenarlos alfabéticamente y por población
+- Search and see countries
+- Create touristic activities
+- Filter by continent and associated activities
+- Order alphabetically and by population
 
-### __Endpoint que se utilizó:__
+### __Endpoint used:__
 
 - GET https://restcountries.eu/rest/v2/all
 
-#### __Tecnologías utilizadas:__
+#### __Tech used:__
 
 - React
 - Redux
@@ -30,30 +30,30 @@ Aplicación en la cual se puede ver información de distintos países utilizando
 
 ### __Frontend:__
 
-Se desarrolló una aplicación con React/Redux que contiene las siguientes pantallas/rutas.
+Developed with React/Redux, including these routes:
 
-- __Pagina inicial__: landing con un botón para ir al home  el título de la app.
-- __Ruta principal__: display de países, botones para filtro, paginación y navegación, barra de búsqueda.
-- __Ruta de detalle de país__: muestra información más específica del país y las actividades asociadas a él.
-- __Ruta de creación de actividad turística__: formulario para agregar actividades a países.
+- __Landing page__: landing with home button and page title.
+- __Home page__: countries display, buttons for filtering, sorting and navigating, search bar.
+- __Country detail page__: displays specific country information and associated activities.
+- __Activity creation page__: form where you can create touristic activities.
 
-### __Base de datos:__
+### __Database:__
 
-Se utilizó PostgreSQL con Sequelize y se modelaron las entidades en una hoja de papel.
+PostgreSQL was used for tables and Sequelize for model creation.
 
 ### __Backend server:__
 
-Se desarrolló un servidor en Node/Express con las siguientes rutas:
+Server developed with Node/Express including the following routes:
 
-- __GET /countries__: para el display de todos los países.
-- __GET /countries/{idPais}__: para la página de detalle de cada país.
-- __GET /countries?name="..."__: para la barra de búsqueda.
-- __POST /activity__: para guardar la actividad del formulario.
+- __GET /countries__: for displaying all the countries.
+- __GET /countries/{idPais}__: for fetching a single country data.
+- __GET /countries?name="..."__: for the search bar.
+- __POST /activity__: for saving the form data.
 
-### __Formato de estilos:__
+### __Styling:__
 
-CSS Modules
+CSS Modules were used.
 
 ### __Testing:__
 
-- Se testeó una ruta del backend y un modelo de la base de datos.
+- One backend route tested and one sequelize model tested.
